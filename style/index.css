@@ -1,0 +1,801 @@
+@charset "UTF-8";
+
+/* ----------APONTAMENTOS---------- */
+/*p {
+    Medidas das fontes:
+
+    Medidas Absolutas
+    cm, mm, in, px, pt, pc
+
+    Medidas Relativas
+    em, ex, rem, vw, vh, %
+
+    Normalmente:
+    16px = 1em
+    
+    ShortHand:
+    - font-style -> font-weight -> font-size -> font-family
+
+    Configurações complexas:
+    font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    
+    Config Simplificada
+    font: italic normal 1em Arial, Helvetica, sans-serif;
+
+    Decorar texto:    
+    text-decoration: underline;
+    
+    Alinhamento do texto:
+    text-align: left;
+    text-indent: 1em;
+}*/
+
+/* Selectores personalizados
+    em HTML é id    = em CSS é # (só pode um elemento)
+    em HTML é class = em CSS é . (pode vários elementos)
+    :               = pseudo-class
+    ::              = pseudo-element
+    >               = children
+*/
+
+/*
+
+CAIXAS
+Box level
+h1 {
+        height: ;
+        width: ;
+
+        border: ;
+        
+        padding: ;
+
+        margin: ;
+
+        outline: ;
+}
+
+Inline Level
+a {
+
+}
+
+    /* Tipos de format() */
+    /* 
+    - opentype (otf)
+    - truetype (ttf)
+    - embedded-opentype
+    - truetype-aat (Apple Advanced Typography)
+    - svg
+    */
+
+/* ----------APONTAMENTOS---------- */
+
+/* Importar fontes online*/
+/* Destaque */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+/* Título */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Parágrafos*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Importar fontes da máquina */
+@font-face {
+    font-family: 'love';
+    src: url('../fonts/vallenia love.otf') format('opentype'), url('../fonts/vallenia.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*--------------------Variáveis--------------------*/
+:root {
+    /*--------------------CORES CORPO DO SITE--------------------*/
+    --colorbackgroundheader: linear-gradient(to bottom, #b9f8fd,#ffffff);
+    --colorbackgroundbody: linear-gradient(to bottom, #ffffff,#e8fdff);
+    --colorbackgroundmain: white;
+    --colorbackgroundfooter: linear-gradient(to bottom, #e8fdff, #ffffff);
+    
+    /*--------------------CORES TITULOS--------------------*/
+    --colortitulodestaque: #141489;
+    --colortituloh2: #233ab4;
+    --colortituloh3: #0f8dbf;
+
+    /*--------------------CORES MENU--------------------*/
+    --colorbackgroundmenulang: linear-gradient(to bottom, #0d0d0d,#141489);
+    --colorbackgroundbuttonlang: #e8fdff;
+    --colorbackgroundmenuprincipal: #141489;
+    --colorbackgroundmenuhover: #00ffe5;
+
+    /*--------------------CORES FONTES--------------------*/
+    --colorfontmenu: #00ffe5;
+    --colorfontbutton: #141489;
+
+    /*--------------------CORES LINKS--------------------*/
+    --colorlink: #141489;
+    --colorlinkhover: #00ffe5;
+    --colorlinkactive: #141489;
+    --colorlinkvisited: #1b65a6;
+
+    /*--------------------FONTES--------------------*/
+    --fontpadrao: normal 1em 'Raleway', sans-serif;
+    --fontdestaque: 'Parisienne', cursive;
+    --fonttitulos: 'Russo One', serif;
+    --fontbutton: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*html, body {
+    height: 100%;
+}*/
+
+p {
+    margin: 15px 0px 0px 0px;
+    text-indent: 10px;
+}
+/*--------------------LANGUAGE MENU (OUT SITE)--------------------*/
+
+nav#languagemenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    /*
+    text-align: right;
+    background-image: var(--colorbackgroundmenulang);
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    */
+}
+
+div.language {
+    display: inline-block;
+    color: var(--colorfontbutton);
+}
+
+p.lang {
+    font-family: var(--fontbutton);
+    font-size: 0.90em;
+
+    background-color: var(--colorbackgroundbuttonlang);
+
+    padding-right: 25px;
+    padding-left: 25px;
+
+    margin: 0px 0px;
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 255, 229, 0.4);
+    border-radius: 10px;
+}
+
+div.language > a {
+    display: none;
+    background-color: var(--colorbackgroundbuttonlang);
+    color: var(--colorfontbutton);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.90em;
+
+    padding-right: 25px;
+    padding-left: 25px;
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 255, 229, 0.4);
+    border-radius: 10px;
+}
+
+div.language:hover > a {
+    display: inline-block;
+    background-color: var(--colorbackgroundbuttonlang);
+    color: var(--colorfontbutton);
+
+    font-family: var(--fontbutton);
+    font-size: 0.90em;
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 255, 229, 0.4);
+    border-radius: 10px;
+}
+
+div.language:hover > a:hover {
+    display: inline-block;
+    background-color: var(--colorbackgroundmenuhover);
+    color: var(--colorfontbutton);
+
+    font-family: var(--fontbutton);
+    font-size: 0.90em;
+}
+
+div.language:hover > a:active {
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.4) inset;
+}
+
+div.language:hover > p {
+    display: none;
+}
+
+/*--------------------CORPO DO SITE--------------------*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    background: url(../imgs/fundo/23322.jpg) no-repeat center center/cover;
+    /*background-image: var(--colorbackgroundbody);
+    background-color: black;
+    background-image: url('../imgs/fundo/23322.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    /*background-attachment: scroll;*/
+}
+
+header {
+    /*background-image: var(--colorbackgroundheader);*/
+
+    /*min-height: 150px;*/
+
+    /*padding-top: 20px;*/
+    padding-bottom: 20px;
+
+    min-width: 320px;
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+header > h1 {
+    font-family: var(--fontdestaque);
+    color: var(--colorbackgroundbuttonlang);
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+header > p {
+    font-family: var(--fonttitulos);
+    color: var(--colorbackgroundmenuhover);
+    font-size: 1.1em;
+    text-align: center;
+
+    max-width: 1000px;
+
+    padding-right: 10px;
+    padding-left: 10px;
+
+    margin: auto;
+    margin-bottom: 20px;
+
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+#checkbox-menu {
+    display: none;
+}
+
+nav#menuprincipal {
+    text-align: center;
+    float: none;
+    display: block;
+}
+
+nav#menuprincipal > a {
+    background-color: var(--colorbackgroundbuttonlang);
+    color: var(--colorfontbutton);
+
+    font-family: var(--fontbutton);
+    font-size: 0.95em;
+    font-weight: 300;
+
+    /*min-width: 320px;
+    max-width: 1000px;*/
+
+    padding-right: 25px;
+    padding-left: 25px;
+
+    margin-right: 4px;
+    margin-bottom: 10px;
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 255, 229, 0.4);
+    border-radius: 10px;
+}
+
+nav#menuprincipal > a:hover {
+    background-color: var(--colorbackgroundmenuhover);
+    color: var(--colorfontbutton);
+
+    font-family: var(--fontbutton);
+    font-size: 0.95em;
+    font-weight: 600;
+
+    transition-duration: .5s;
+}
+
+nav#menuprincipal > a:active {
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.4) inset;
+
+}
+
+main {
+    background-color: var(--colorbackgroundmain);
+
+    min-width: 320px;
+    max-width: 1000px;
+
+    padding: 20px;
+
+    margin: auto;
+    margin-bottom: 30px;
+
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(20, 20, 137, 0.2);
+}
+
+footer {
+    text-align: center;
+
+    /*background-image: var(--colorbackgroundfooter);*/
+
+    /*padding: 1px 0px 1px 0px;*/
+    /*margin: 20px -8px -10px -8px;*/
+}
+
+footer > p {
+    font-family: var(--fontbutton);
+    color: var(--colorbackgroundbuttonlang);
+
+    font-weight: 500;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 0px;
+}
+
+/*--------------------TITLES--------------------*/
+
+h2 {
+    font-family: var(--fonttitulos);
+    font-size: 1.7em;
+    font-weight: 400;
+
+    color: var(--colortituloh2);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: var(--fonttitulos);
+    font-size: 1.2em;
+    font-weight: 200;
+
+    color: var(--colortituloh3);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+nav#footermenu {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+/*--------------------SECTIONS--------------------*/
+
+
+
+/*--------------------ARTICLES--------------------*/
+
+article#sobremim > p {
+    /*display: none;*/
+    font: var(--fontpadrao);
+    text-align: center;
+    line-height: 1.4em;
+
+    /*margin: auto;
+    padding: 20px;*/
+}
+
+/*#sobremim:hover > p {
+    display: block;
+    margin: auto;
+}*/
+
+article#percursoescolar {
+    text-align: center;
+    display: inline-block;
+
+    /*width: 42.5%;
+
+    margin: auto;
+    padding: 0px 0px 0px 5%;*/
+}
+
+article#percursoescolar > p {
+    font: var(--fontpadrao);
+    text-align: center;
+    line-height: 1.4em;
+
+    /*margin: auto;
+    padding: 20px;*/
+}
+
+article#percursoprofissional {
+    text-align: center;
+    display: inline-block;
+
+    /*width: 42.5%;
+
+    margin: auto;
+    padding: 0px 0px 0px 5%;*/
+}
+
+article#percursoprofissional > p {
+    font: var(--fontpadrao);
+    text-align: center;
+    line-height: 1.4em;
+
+    /*margin: auto;
+    padding: 20px;*/
+}
+
+article#services {
+    display: inline-block;
+
+    /*width: 28.9%;
+
+    margin: auto;
+    padding: 0px 0px 0px 4%;*/
+}
+
+article#services > p {
+    font: var(--fontpadrao);
+    text-align: center;
+    line-height: 1.4em;
+    
+    /*max-height: 173px;
+    overflow-y: scroll;
+
+    margin: auto;
+    padding: 20px;
+
+    position: center;
+    object-position: center;*/
+}
+
+article.services > p {
+    font: var(--fontpadrao);
+    text-align: center;
+    line-height: 1.4em;
+    
+    /*max-height: 173px;
+    overflow-y: scroll;
+
+    margin: auto;
+    padding: 20px;
+
+    position: center;
+    object-position: center;*/
+}
+/*--------------------DIVs--------------------*/
+
+
+/*--------------------PARAGRAPHS--------------------*/
+nav#downloadmenu {
+    text-align: center;
+
+    /*margin: 0px 210px 0px 210px;*/
+}
+
+nav#downloadmenu > li {
+    display: none;
+}
+
+nav#downloadmenu:hover > li.downloadlist {
+    display: block;
+}
+
+p.download {
+    background-color: var(--colorbackgroundmenuprincipal);
+    color: var(--colorfontmenu);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+
+    /*padding-right: 25px;
+    padding-left: 25px;*/
+
+    margin-bottom: 20px;
+    /*margin: auto;*/
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+p.download:hover {
+    background-color: var(--colorfontmenu);
+    color: var(--colorbackgroundmenuprincipal);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+
+    /*padding-right: 25px;
+    padding-left: 25px;*/
+
+    /*margin: auto;*/
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+
+    transition-duration: .5s;
+}
+
+p.download::before {
+    content: '\1F4E5\00A0';
+}
+
+p.download::after {
+    content: '\00A0\1F4E5';
+}
+
+a.downloadbutton {
+    background-color: var(--colorbackgroundmenuprincipal);
+    color: var(--colorfontmenu);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+    font-weight: 300;
+
+    min-width: 320px;
+    max-width: 1000px;
+
+    padding-right: 25px;
+    padding-left: 25px;
+
+    /*margin-bottom: 10px;*/
+    /*margin: auto;*/
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+a.downloadbutton:hover {
+    background-color: var(--colorfontmenu);
+    color: var(--colorbackgroundmenuprincipal);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+    font-weight: 500;
+
+    /*padding-right: 25px;
+    padding-left: 25px;
+
+    margin: auto;*/
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+
+    transition-duration: .5s;
+}
+
+a.downloadbutton:active {
+    background-color: var(--colorfontmenu);
+    color: var(--colorbackgroundmenuprincipal);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+
+    /*padding-right: 25px;
+    padding-left: 25px;*/
+
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.4) inset;
+    border-radius: 10px;
+}
+
+li.downloadlist {
+    list-style-type: none;
+    /*margin: auto;*/
+    
+}
+/*--------------------LINKS--------------------*/
+a {
+    /*color: var(--colorlink);*/
+    text-decoration: none;
+}
+
+/*a:visited {
+    color: var(--colorlinkvisited);
+}
+
+a:hover {
+    color: var(--colorlinkhover);
+}
+
+a:active {
+    color: var(--colorlinkactive);
+    background-color: #00ffe5;
+}*/
+
+/*--------------------IMAGES--------------------*/
+img.smallimgcenter {
+    float: none;
+    display: block;
+    margin: auto;
+
+    /*width: 100%;*/
+}
+
+img.mediumimgcenter {
+    float: none;
+    display: block;
+    margin: auto;
+
+    /*width: 100%;*/
+}
+
+img.bigimgcenter {
+    float: none;
+    display: block;
+    margin: auto;
+
+    border-radius: 50%;
+
+    /*width: 100%;*/
+}
+
+/*--------------------VIDEOS--------------------*/
+div.video {
+    /*background-image: var(--colorbackgroundheader);*/
+
+    padding: 10px;
+    padding-bottom: 58%;
+
+    margin: 0px -20px 0px -20px;
+
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+/*--------------------MOBILE--------------------*/
+@media screen and (max-width: 600px) {
+    /*main {
+        width: 100%;
+    }*/
+    nav#menuprincipal {
+        text-align: center;
+        float: none;
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #checkbox-menu {
+        position: relative;
+        opacity: 0;
+    }
+    
+    label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 22px;
+        width: 30px;
+    }
+    
+    label span {
+        position: absolute;
+        display: block;
+        height: 5px;
+        width: 100%;
+        border-radius: 30px;
+        background: var(--colorfontmenu);
+        transition: 0.25s ease-in-out;
+    }
+    
+    label span:nth-child(1) {
+        top: 0px;
+    }
+    
+    label span:nth-child(2) {
+        top: 8px;
+    }
+    
+    label span:nth-child(3) {
+        top: 16px;
+    }
+    
+    #checkbox-menu:checked + label span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+    
+    #checkbox-menu:checked + label span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #checkbox-menu:checked + label span:nth-child(3) {
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    #checkbox-menu:checked ~ #menuprincipal {
+        display: block;
+        /*float: none;*/
+        
+        min-width: 320px;
+        max-width: 1000px;
+    }
+
+    #checkbox-menu:checked ~ #menuprincipal > a {
+        display: block;
+        float: none;
+        
+        min-width: 320px;
+        max-width: 1000px;
+    }
+
+    nav#menuprincipal {
+        display: none;
+    }
+/*---------------------------------------------------------------------*/
+    p.lang {
+        display: none;
+    }
+    
+    div.language > a {
+        display: inline-block;
+    }
+
+    nav#downloadmenu p.download {
+        display: block;
+        float: none;
+        
+        min-width: 320px;
+        max-width: 1000px;
+
+        margin-bottom: 20px;
+    }
+
+    nav#downloadmenu a {
+        display: block;
+        float: none;
+        
+        min-width: 320px;
+        max-width: 1000px;
+
+        margin-top: 5px;
+    }
+}
+/*--------------------TABLETS/DESKTOPS--------------------*/
